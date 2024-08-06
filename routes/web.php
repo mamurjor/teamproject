@@ -20,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+Route::get('empform',[DashboardController::class,'saveform'])->name('saveform');
+
+
+Route::post('gradesave',[DashboardController::class,'gradesave'])->name('gradesave');
