@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
 
+use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\PracticeDatabaseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +18,14 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+// Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+
+Route::get('/',[WebsiteController::class,'full_website_controll'])->name('full_website_controll');
+
+Route::get('/dashboard',[DashboardController::class,'dashboard_all_data'])->name('dashboard_all_data');
+
+Route::get('/practice',[PracticeDatabaseController::class,'data_show_from_database'])->name('data_show_from_database');
