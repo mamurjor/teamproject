@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\contactController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
@@ -26,7 +27,7 @@ use App\Http\Controllers\PracticeDatabaseController;
 
 Route::get('/',[WebsiteController::class,'FullWebsiteData'])->name('full_website_controll');
 
-Route::get('/dashboard',[DashboardController::class,'dashboard_all_data'])->name('dashboard_all_data');
+
 
 Route::get('/practice',[PracticeDatabaseController::class,'data_show_from_database'])->name('data_show_from_database');
 Route::get('/expertiselist',[PracticeDatabaseController::class,'expertiselist'])->name('expertiselist');
