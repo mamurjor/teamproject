@@ -8,7 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    //
+    public function dashboard(){
+        return view('backend/dashboard');
+    }
+
+    public function form(){
+        return view('backend.pages.form');
+    }
+    public function register(){
+        return view('backend.pages.register');
+    }
 
     public function saveform(){
 

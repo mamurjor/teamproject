@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\contactController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
@@ -19,7 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+
+
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+
+Route::get('/form',[DashboardController::class,'form'])->name('form');
+
+
+Route::get('/register',[DashboardController::class,'register'])->name('register');
+
+Route::post('contact',[contactController::class,'contact'])->name('contact');
+
+
+
 Route::get('empform',[DashboardController::class,'saveform'])->name('saveform');
 
 
