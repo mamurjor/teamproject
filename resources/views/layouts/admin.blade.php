@@ -26,10 +26,12 @@
   </head>
   <body class="with-welcome-text">
 
+
+    
     @yield('maincontent')
 
 
-    
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{asset('admin/assets/vendors/js/vendor.bundle.base.js')}}"></script>

@@ -9,6 +9,9 @@ class DashboardController extends Controller
 {
     //
 
+
+
+
     public function listofwebistedata(){
 
        //$employee =  DB::select('select * from employee');
@@ -25,4 +28,10 @@ class DashboardController extends Controller
 
        dd($userdelte);
     }
+
+    public function dashboard_all_data(){
+
+        return view('dashboard');
+
+       }
 }

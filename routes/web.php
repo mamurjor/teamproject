@@ -22,10 +22,13 @@ use App\Http\Controllers\PracticeDatabaseController;
 //     return view('welcome');
 // });
 
-// Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+ Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
 
-Route::get('/',[WebsiteController::class,'full_website_controll'])->name('full_website_controll');
+Route::get('/',[WebsiteController::class,'FullWebsiteData'])->name('full_website_controll');
 
 Route::get('/dashboard',[DashboardController::class,'dashboard_all_data'])->name('dashboard_all_data');
 
 Route::get('/practice',[PracticeDatabaseController::class,'data_show_from_database'])->name('data_show_from_database');
+Route::get('/expertiselist',[PracticeDatabaseController::class,'expertiselist'])->name('expertiselist');
+
+Route::get('/heroform',[PracticeDatabaseController::class,'heroform'])->name('heroform');
