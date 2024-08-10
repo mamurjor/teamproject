@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
 
+use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\PracticeDatabaseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,24 +19,17 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+ Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+
+Route::get('/',[WebsiteController::class,'FullWebsiteData'])->name('full_website_controll');
 
 
 
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+Route::get('/practice',[PracticeDatabaseController::class,'data_show_from_database'])->name('data_show_from_database');
+Route::get('/expertiselist',[PracticeDatabaseController::class,'expertiselist'])->name('expertiselist');
 
-Route::get('/form',[DashboardController::class,'form'])->name('form');
-
-
-Route::get('/register',[DashboardController::class,'register'])->name('register');
-
-Route::post('contact',[contactController::class,'contact'])->name('contact');
-
-
-
-Route::get('empform',[DashboardController::class,'saveform'])->name('saveform');
-
-
-Route::post('gradesave',[DashboardController::class,'gradesave'])->name('gradesave');
+Route::get('/heroform',[PracticeDatabaseController::class,'heroform'])->name('heroform');
