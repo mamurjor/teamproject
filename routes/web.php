@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\WellcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,10 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
-Route::get('empform',[DashboardController::class,'saveform'])->name('saveform');
+Route::get('/welcome',[WellcomeController::class,'welcome'])->name('welcome');
+Route::get('/allwebsitedata',[DashboardController::class,'listofwebistedata'])->name('listofwebistedata');
+Route::get('/empform',[DashboardController::class,'saveform'])->name('saveform');
 
 
-Route::post('gradesave',[DashboardController::class,'gradesave'])->name('gradesave');
+Route::post('/gradesave',[DashboardController::class,'gradesave'])->name('gradesave');

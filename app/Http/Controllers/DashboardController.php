@@ -14,7 +14,7 @@ class DashboardController extends Controller
 
 
 
-        return view('admin.grade.form');
+       return view('admin.grade.form');
 
 
     }
@@ -25,19 +25,19 @@ class DashboardController extends Controller
 
 
 
-        $full_name =  $request->full_name;
+      //  $full_name =  $request->full_name;
 
         $email =  $request->email;
         $cell =  $request->cell;
 
-        //DB::insert("INSERT into grade (name,basic) VALUES('$username','$basic')");
+        DB::insert("INSERT into users (name,basic) VALUES('$email','$cell')");
 
 
-         DB::insert("INSERT into employee (full_name,email,cell) VALUES('$full_name','$email','$cell')");
+       //  DB::insert("INSERT into employee (full_name,email,cell) VALUES('$full_name','$email','$cell')");
 
 
 
-       return redirect()->route('listofwebistedata');
+      // return redirect()->route('listofwebistedata');
 
 
     }
@@ -45,9 +45,9 @@ class DashboardController extends Controller
 
     public function listofwebistedata(){
 
-       $employee =  DB::select('select * from employee');
+      $employee =  DB::select('select * from user');
 
-       return view('admin.grade.list',compact('employee'));
+      return view('admin.grade.list',compact('employee'));
 
        //crud = create(insert), read(select), update
 
