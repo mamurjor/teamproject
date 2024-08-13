@@ -1,0 +1,109 @@
+   <!--start sidebar-->
+   <aside class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header">
+      <div class="logo-icon">
+        <img src="{{ asset('backend/assets/images/logo-icon.png') }}" class="logo-img" alt="Logo">
+      </div>
+      <div class="logo-name flex-grow-1">
+        <h5 class="mb-0">Maxton</h5>
+      </div>
+      <div class="sidebar-close">
+        <span class="material-icons-outlined">close</span>
+      </div>
+    </div>
+    <div class="sidebar-nav">
+        <!--navigation-->
+        <ul class="metismenu" id="sidenav">
+
+          <li>
+            <a href="{{ route('dashboard') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Dashboard</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('hero') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">border_all</i>
+              </div>
+              <div class="menu-title">Hero Area</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('about') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">apps</i>
+              </div>
+              <div class="menu-title">About</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('resume') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">attachment</i>
+              </div>
+              <div class="menu-title">Resume</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('portfolio') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">art_track</i>
+              </div>
+              <div class="menu-title">Portfolio</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('blog') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">border_clear</i>
+              </div>
+              <div class="menu-title">Blog</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('counter') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">av_timer</i>
+              </div>
+              <div class="menu-title">Counter</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('contact') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">contact_mail</i>
+              </div>
+              <div class="menu-title">Contact</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('package') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">account_balance_wallet</i>
+              </div>
+              <div class="menu-title">Package</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('skill') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">traffic</i>
+              </div>
+              <div class="menu-title">Skill</div>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('setting') }}">
+                <div class="parent-icon"><i class="material-icons-outlined">settings</i>
+              </div>
+              <div class="menu-title">Setting</div>
+            </a>
+          </li>
+         </ul>
+        <!--end navigation-->
+    </div>
+  </aside>
+<!--end sidebar-->
