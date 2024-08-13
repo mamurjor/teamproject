@@ -23,7 +23,7 @@
                 <li class="social-item"><a class="social-link" href="#"><i class="ti-google" aria-hidden="true"></i></a></li>
                 <li class="social-item"><a class="social-link" href="#"><i class="ti-instagram" aria-hidden="true"></i></a></li>
                 <li class="social-item"><a class="social-link" href="#"><i class="ti-github" aria-hidden="true"></i></a></li>
-            </ul>  
+            </ul>
         </div>
         <div class="col-lg-4 about-card">
             <h3 class="font-weight-light">My Expertise</h3>
