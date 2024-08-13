@@ -27,10 +27,13 @@ use App\Http\Controllers\skillController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
+
+
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
 Route::get('/contact',[contactController::class,'index'])->name('contact');
 
