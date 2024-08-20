@@ -1,21 +1,20 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\HeroAreaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\resume;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\settingController;
 use App\Http\Controllers\skillController;
-
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,10 +26,26 @@ use App\Http\Controllers\skillController;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
+
+Route::get('/dashboard', function () {
+    return view('admin/dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::post('/verify-email', [ProfileController::class, 'verifyEmail'])->name('verifyEmail');
 
 
 Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
@@ -120,3 +135,8 @@ Route::get('/skill/{id}', [SkillController::class, 'show'])->name('skill.show');
 
 
 
+
+
+});
+
+require __DIR__.'/auth.php';

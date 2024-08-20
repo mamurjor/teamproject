@@ -28,7 +28,36 @@
     </div>
 </div>
 <!--end breadcrumb-->
+<!-- Verify SMS Modal -->
+{{-- <div class="modal fade" id="verifySMSModal" tabindex="-1" aria-labelledby="verifySMSModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="verifySMSModalLabel">Verify Your SMS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Your email is not verified. Please verify your SMS number to continue.</p>
+                <form action="{{ route('verify-email') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="smsCode" class="form-label">SMS Verification Code</label>
+                        <input type="text" class="form-control" id="smsCode" name="smsCode" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verify SMS</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script>
+    // Check if the user's email is not verified, and trigger the modal
+    @if(!Auth::user()->hasVerifiedEmail())
+        var verifySMSModal = new bootstrap.Modal(document.getElementById('verifySMSModal'));
+        verifySMSModal.show();
+    @endif
+</script> --}}
 
         <div class="row">
           <div class="col-xxl-8 d-flex align-items-stretch">
@@ -40,8 +69,23 @@
                       <img src="assets/images/avatars/01.png" class="rounded-circle bg-grd-info p-1"  width="60" height="60" alt="user">
                       <div class="">
                         <p class="mb-0 fw-semibold">Welcome back</p>
-                        <h4 class="fw-semibold mb-0 fs-4 mb-0">Jhon Anderson!</h4>
+                        <h4 class="fw-semibold mb-0 fs-4 mb-0">{{ Auth::user()->name }}</h4>
                       </div>
+
+                      @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                      @if (!Auth::user()->hasVerifiedEmail())
+                      <div class="alert alert-warning">
+                          {{ __('Your email address is not verified. Please verify your email address to unlock all features.') }}
+                          <form method="POST" action="{{ route('verifyEmail') }}">
+                              @csrf
+                              <button type="submit" class="btn btn-primary">Resend Verification Email</button>
+                          </form>
+                      </div>
+                  @endif
                     </div>
                     <div class="d-flex align-items-center gap-5">
                       <div class="">
