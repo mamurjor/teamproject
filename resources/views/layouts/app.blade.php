@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with JohnDoe landing page.">
     <meta name="author" content="Devcrud">
+      <!-- CSRF Token -->
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>JohnDoe Landing page | Free Bootstrap 4.3.x landing page</title>
+
+      <!-- Fonts -->
+      <link rel="dns-prefetch" href="//fonts.bunny.net">
+      <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+  
+      <!-- Scripts -->
+      @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- font icons -->
     <link rel="stylesheet" href="{{asset('assets/vendors/themify-icons/css/themify-icons.css')}}">
     <!-- Bootstrap + JohnDoe main styles -->
@@ -16,6 +26,17 @@
 
 @yield('maincontent')
 
+
+
+
+
+<!-- ui auth nav code  -->
+<div id="app">
+  
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 
 
 

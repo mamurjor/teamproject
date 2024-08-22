@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
-    public function full_website_controll(){
+    public function fullWebsiteData(){
 
         return view('welcome');
     }
