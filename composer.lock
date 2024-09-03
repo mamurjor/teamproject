@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c491b8531eec05ba41a11d9276a5749",
+    "content-hash": "4976822a50ad5e84233ede5f71989113",
     "packages": [
         {
             "name": "brick/math",
@@ -1051,6 +1051,7 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/framework",
             "version": "v10.48.20",
             "source": {
@@ -1060,6 +1061,79 @@
             },
             "dist": {
                 "type": "zip",
+=======
+            "name": "laravel/breeze",
+            "version": "v1.29.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "22c53b84b7fff91b01a318d71a10dfc251e92849"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/22c53b84b7fff91b01a318d71a10dfc251e92849",
+                "reference": "22c53b84b7fff91b01a318d71a10dfc251e92849",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.17",
+                "illuminate/filesystem": "^10.17",
+                "illuminate/support": "^10.17",
+                "illuminate/validation": "^10.17",
+                "php": "^8.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0",
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2024-03-04T14:35:21+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v10.48.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "be2be342d4c74db6a8d2bd18469cd6d488ab9c98"
+            },
+            "dist": {
+                "type": "zip",
+>>>>>>> 16d9df6dd0ec232640d844214db5dcf31b52f390
                 "url": "https://api.github.com/repos/laravel/framework/zipball/be2be342d4c74db6a8d2bd18469cd6d488ab9c98",
                 "reference": "be2be342d4c74db6a8d2bd18469cd6d488ab9c98",
                 "shasum": ""
@@ -5866,6 +5940,7 @@
         },
         {
             "name": "laravel/pint",
+<<<<<<< HEAD
             "version": "v1.17.3",
             "source": {
                 "type": "git",
@@ -5876,6 +5951,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/pint/zipball/9d77be916e145864f10788bb94531d03e1f7b482",
                 "reference": "9d77be916e145864f10788bb94531d03e1f7b482",
+=======
+            "version": "v1.17.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "e8a88130a25e3f9d4d5785e6a1afca98268ab110"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/e8a88130a25e3f9d4d5785e6a1afca98268ab110",
+                "reference": "e8a88130a25e3f9d4d5785e6a1afca98268ab110",
+>>>>>>> 16d9df6dd0ec232640d844214db5dcf31b52f390
                 "shasum": ""
             },
             "require": {
@@ -5886,13 +5973,22 @@
                 "php": "^8.1.0"
             },
             "require-dev": {
+<<<<<<< HEAD
                 "friendsofphp/php-cs-fixer": "^3.64.0",
                 "illuminate/view": "^10.48.20",
+=======
+                "friendsofphp/php-cs-fixer": "^3.61.1",
+                "illuminate/view": "^10.48.18",
+>>>>>>> 16d9df6dd0ec232640d844214db5dcf31b52f390
                 "larastan/larastan": "^2.9.8",
                 "laravel-zero/framework": "^10.4.0",
                 "mockery/mockery": "^1.6.12",
                 "nunomaduro/termwind": "^1.15.1",
+<<<<<<< HEAD
                 "pestphp/pest": "^2.35.1"
+=======
+                "pestphp/pest": "^2.35.0"
+>>>>>>> 16d9df6dd0ec232640d844214db5dcf31b52f390
             },
             "bin": [
                 "builds/pint"
@@ -5928,6 +6024,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
+<<<<<<< HEAD
             "time": "2024-09-03T15:00:28+00:00"
         },
         {
@@ -5942,6 +6039,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/b4af38e1ab16fe7aa729eddf5b810229f42d2ad3",
                 "reference": "b4af38e1ab16fe7aa729eddf5b810229f42d2ad3",
+=======
+            "time": "2024-08-06T15:11:54+00:00"
+        },
+        {
+            "name": "laravel/sail",
+            "version": "v1.31.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "3d06dd18cee8059baa7b388af00ba47f6d96bd85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/3d06dd18cee8059baa7b388af00ba47f6d96bd85",
+                "reference": "3d06dd18cee8059baa7b388af00ba47f6d96bd85",
+>>>>>>> 16d9df6dd0ec232640d844214db5dcf31b52f390
                 "shasum": ""
             },
             "require": {
@@ -5991,7 +6104,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+<<<<<<< HEAD
             "time": "2024-09-03T13:44:23+00:00"
+=======
+            "time": "2024-08-02T07:45:47+00:00"
+>>>>>>> 16d9df6dd0ec232640d844214db5dcf31b52f390
         },
         {
             "name": "mockery/mockery",
