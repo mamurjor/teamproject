@@ -8,9 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+<<<<<<< HEAD
     public function dashboard(){
         return view('admin/dashboard');
     }
+=======
+  
+   public function dashboardAllData(){
+>>>>>>> 106a7276a8b8e874f9a4d0a8f2466896ca979bbe
 
 
 
