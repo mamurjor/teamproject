@@ -13,27 +13,15 @@
 <!--start main wrapper-->
 <main class="main-wrapper">
     <div class="main-content">
-      <!--breadcrumb-->
-				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Components</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">Hero Area</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="ms-auto">
-						<div class="btn-group">
-							<a href="{{ route('package') }}" class="btn btn-primary d-flex align-items-center gap-1">
-                                <i class="material-icons-outlined">keyboard_backspace</i> Back
-                            </a>
-						</div>
-					</div>
-				</div>
-				<!--end breadcrumb-->
+        <div class="page-breadcrumb  mb-3">
+            <div class="d-flex justify-content-between">
+
+                <a href="{{ route('package') }}" class="btn btn-primary d-flex align-items-center gap-1">
+                    <i class="material-icons-outlined">keyboard_backspace</i> Back
+                </a>
+
+            </div>
+        </div>
 
 
          <div class="row">
@@ -41,43 +29,33 @@
             <div class="card">
                 <div class="card-body p-4">
                     <h5 class="mb-4">Edit Hero Area</h5>
-                    <form action="{{ route('package.update', $package->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('package.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
 
                         <div class="form-group">
                             <label for="name">Package Name</label>
-                            <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $package->name) }}" required>
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
-
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="text" name="price" id="price" class="form-control" value="{{ old('price', $package->price) }}" required>
+                            <input type="text" name="price" id="price" class="form-control" required>
                         </div>
-
                         <div class="form-group">
                             <label for="duration">Duration</label>
-                            <input type="text" name="duration" id="duration" class="form-control" value="{{ old('duration', $package->duration) }}" required>
+                            <input type="text" name="duration" id="duration" class="form-control" required>
                         </div>
-
                         <!-- Features Input -->
                         <div class="form-group">
                             <label for="features">Features</label>
                             <div id="features-wrapper">
-                                @foreach(explode(', ', $package->features) as $feature)
-                                    <div class="d-flex mb-2">
-                                        <textarea name="features[]" class="form-control" placeholder="Enter feature">{{ $feature }}</textarea>
-                                        <button type="button" class="btn btn-danger ml-2" onclick="removeFeature(this)">Remove</button>
-                                    </div>
-                                @endforeach
                                 <div class="d-flex mb-2">
-                                    <textarea name="features[]" class="form-control" placeholder="Enter feature"></textarea>
+                                    <textarea name="features[]" id="features" class="form-control" placeholder="Enter feature"></textarea>
                                     <button type="button" class="btn btn-success ml-2" onclick="addFeature()">Add</button>
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Update Package</button>
+                        <button type="submit" class="btn btn-primary">Create Package</button>
                     </form>
 
 
@@ -103,7 +81,6 @@
 <!--start switcher-->
 @include('admin.layouts.sections.menu.switcher')
 <!--start switcher-->
-
 
 
 

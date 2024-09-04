@@ -6,6 +6,10 @@
   <body class="with-welcome-text">
 
   @yield('maincontent')
+  @if (session()->has('flasher'))
+    @include('flasher::message')
+@endif
+
 
 
     @include('admin.layouts.sections.scripts')

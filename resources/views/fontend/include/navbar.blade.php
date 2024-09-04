@@ -14,6 +14,9 @@
                 <li class="nav-item">
                     <a href="#resume" class="nav-link">Resume</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('login') }}" class="nav-link">Log In</a>
+                </li>
             </ul>
             <ul class="navbar-nav brand">
                 <img src="assets/imgs/avatar.jpg" alt="" class="brand-img">

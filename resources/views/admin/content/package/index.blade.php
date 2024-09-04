@@ -23,9 +23,10 @@
             <button type="button" class="btn btn-dark d-flex align-items-center gap-1">
                 <i class="material-icons-outlined">keyboard_backspace</i> Back
             </button>
-            <button type="button" class="btn btn-primary d-flex align-items-center gap-1">
+            <a href="{{ route('package.create') }}" class="btn btn-primary d-flex align-items-center gap-1">
                 <i class="material-icons-outlined">create</i> Create
-            </button>
+            </a>
+
         </div>
     </div>
 
@@ -44,27 +45,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($packages as $package)
                         <tr>
-                            <td>01</td>
-                            <td>Tiger Nixon</td>
-                            <td>$320,800</td>
-                            <td>3 days</td>
+                            <td>{{ $package->id }}</td>
+                            <td>{{ $package->name }}</td>
+                            <td>{{ $package->price }}</td>
+                            <td>{{ $package->duration }}</td>
+                            <td>{{ $package->features }}</td>
                             <td>
-                                <ul>
-                                    <li>01. Good quality</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <div class="d-flex ">
-                                    <button type="button" class="btn btn-dark d-flex align-items-center ">
-                                        <i class="material-icons-outlined">edit</i> Edit
-                                    </button>
-                                    <button type="button" class="btn btn-danger d-flex align-items-center ">
-                                        <i class="material-icons-outlined">delete</i> Delete
-                                    </button>
-                                </div>
+                                <a href="{{ route('package.edit', $package->id) }}" class="btn btn-warning">Edit</a>
+                                <form action="{{ route('package.destroy', $package->id) }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                </form>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
