@@ -2,13 +2,8 @@
 
 @section('maincontent')
 
-<!--start header-->
-  @include('admin.layouts.sections.navbar.navbar')
-<!--end top header-->
 
-<!--start sidebar-->
-@include('admin.layouts.sections.menu.sidebar')
-<!--end sidebar-->
+
 
 
 <!-- Start wrapper-->
@@ -24,7 +19,7 @@
                         <p class="error-message text-white text-uppercase">SORRY, AN ERROR HAS OCCURED, REQUESTED PAGE NOT FOUND!</p>
 
                         <div class="mt-4 d-flex align-items-center justify-content-center gap-3">
-                          <a href="index.html" class="btn btn-grd-danger rounded-5 px-4"><i class="bi bi-house-fill me-2"></i>Go To Home</a>
+                          <a href="{{ route('dashboard') }}" class="btn btn-grd-danger rounded-5 px-4"><i class="bi bi-house-fill me-2"></i>Go To Home</a>
                           <a href="javascript:void();" class="btn btn-light rounded-5 px-4"><i class="bi bi-arrow-left me-2"></i>Previous Page </a>
                         </div>
 
@@ -51,9 +46,7 @@
 <div class="overlay btn-toggle"></div>
 <!--end overlay-->
 
-<!--start footer-->
-@include('admin.layouts.sections.footer.footer')
-<!--end footer-->
+
 
 <!--start switcher-->
 @include('admin.layouts.sections.menu.switcher')

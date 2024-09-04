@@ -98,7 +98,8 @@ Route::get('/package/create', [PackageController::class, 'create'])->name('packa
 Route::post('/package', [PackageController::class, 'store'])->name('package.store');
 Route::get('/package/{id}/edit', [PackageController::class, 'edit'])->name('package.edit');
 Route::put('/package/{id}', [PackageController::class, 'update'])->name('package.update');
-Route::get('/package/{id}', [PackageController::class, 'show'])->name('package.show');
+Route::delete('/package/{id}', [PackageController::class, 'destroy'])->name('package.destroy');
+
 
 // Blog
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
