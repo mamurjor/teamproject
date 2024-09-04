@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('assets/vendors/themify-icons/css/themify-icons.css')}}">
     <!-- Bootstrap + JohnDoe main styles -->
 	<link rel="stylesheet" href="{{asset('assets/css/johndoe.css')}}">
+
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a>
@@ -57,6 +59,7 @@
 
     <!-- JohnDoe js -->
     <script src="{{asset('assets/js/johndoe.js')}}"></script>
-
+ 
+   
 </body>
 </html>

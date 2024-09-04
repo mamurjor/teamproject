@@ -64,6 +64,6 @@ Route::post('/expertiseFormDataCatch',[ListController::class,'expertiseFormDataC
 
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');

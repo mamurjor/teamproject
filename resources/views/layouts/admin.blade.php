@@ -55,5 +55,66 @@
     <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
     <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
     <!-- End custom js for this page-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+
+    <script>
+        // $(document).ready(function () {
+        //     $("#heroform").validate({
+        //         rules: {
+        //             personalText: {
+        //                 required: true,
+                        
+        //             }
+        //         },
+        //         messages: {
+        //           personalText: {
+        //                 required: "Please enter your name",
+                        
+        //             }
+        //         }
+        //     });
+        // });
+
+        $(document).ready(function(){
+          $("#heroform").validate({
+            rules:{
+              personalText:{
+                required:true
+              },
+              username:{
+                required:true
+              },
+              shortDis:{
+                required:true
+              },
+              btn_text:{
+                required:true
+              },
+              btn_url:{
+                required:true
+              }
+      
+              },
+              messages:{
+                personalText:{
+                  required:"You have to enter your name here"
+                },
+           
+                  username:{
+                    required:"set your user name plz"
+                  },
+                  shortDis:{
+                    required:"write some thing"
+                  },
+                  btn_text:{
+                    required:"Enter btn text"
+                  }
+                
+            }
+          });
+        });
+    </script>
+
   </body>
 </html>
