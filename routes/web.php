@@ -14,6 +14,7 @@ use App\Http\Controllers\settingController;
 use App\Http\Controllers\skillController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -31,28 +32,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');
+
+Route::post('/email/resend', function (Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('status', 'verification-link-sent');
+    })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
 
-Route::get('/dashboard', function () {
-    return view('admin/dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-    Route::post('/verify-email', [ProfileController::class, 'verifyEmail'])->name('verifyEmail');
 
-
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-
-Route::get('/contact',[contactController::class,'index'])->name('contact');
-
-Route::get('/portfolio',[PortfolioController::class,'portfolio'])->name('portfolio');
 
 //hero area
 Route::get('/hero', [HeroAreaController::class, 'hero'])->name('hero');
@@ -99,6 +108,8 @@ Route::post('/package', [PackageController::class, 'store'])->name('package.stor
 Route::get('/package/{id}/edit', [PackageController::class, 'edit'])->name('package.edit');
 Route::put('/package/{id}', [PackageController::class, 'update'])->name('package.update');
 Route::delete('/package/{id}', [PackageController::class, 'destroy'])->name('package.destroy');
+Route::post('/packages/{id}/buy', [PackageController::class, 'buy'])->name('packages.buy');
+
 
 
 // Blog

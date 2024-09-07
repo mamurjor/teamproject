@@ -41,6 +41,8 @@
                             <th>Price</th>
                             <th>Duration</th>
                             <th>Features</th>
+                            <th>User</th>
+
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -52,6 +54,7 @@
                             <td>{{ $package->price }}</td>
                             <td>{{ $package->duration }}</td>
                             <td>{{ $package->features }}</td>
+                            <td>{{ $package->user_id }}</td>
                             <td>
                                 <a href="{{ route('package.edit', $package->id) }}" class="btn btn-warning">Edit</a>
                                 <form action="{{ route('package.destroy', $package->id) }}" method="POST" style="display:inline-block;">
