@@ -50,12 +50,16 @@
                             <div id="features-wrapper">
                                 <div class="d-flex mb-2">
                                     <textarea name="features[]" id="features" class="form-control" placeholder="Enter feature"></textarea>
-                                    <button type="button" class="btn btn-success ml-2" onclick="addFeature()">Add</button>
+                                    <button type="button" class="btn btn-success ml-2" onclick="addFeature()"><i class="material-icons-outlined">add</i> </button>
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="user_id">User</label>
+                            <input type="text" name="user_id" id="user_id" class="form-control">
+                        </div>
 
-                        <button type="submit" class="btn btn-primary">Create Package</button>
+                        <button type="submit" class="btn mt-4 btn-primary">Create Package</button>
                     </form>
 
 
@@ -92,7 +96,7 @@
 
         featureDiv.innerHTML = `
             <textarea name="features[]" class="form-control" placeholder="Enter feature"></textarea>
-            <button type="button" class="btn btn-danger ml-2" onclick="removeFeature(this)">Remove</button>
+            <button type="button" class="btn btn-danger ml-2" onclick="removeFeature(this)"><i class="material-icons-outlined">delete</i></button>
         `;
 
         wrapper.appendChild(featureDiv);

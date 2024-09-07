@@ -16,7 +16,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Package::class);
     }
-
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
