@@ -22,7 +22,7 @@
                 <div class="card-body">
                   <h4 class="card-title"><a href="{{route('herolist')}}"><i class="fa-solid fa-arrow-left"></i>Back</a></h4>
                   <p class="card-description"> Hero Form </p>
-                  <form id="heroform" class="forms-sample" method="POST" action="{{route('heroFormDataCatch')}}" enctype="multipart/form-data">
+                  <form id="heroform" class="forms-sample" method="POST" action="{{route('herostore')}}" enctype="multipart/form-data">
                     @csrf
                    
                     <div class="form-group">

@@ -31,9 +31,9 @@
                 <div class="col-sm-12">
                   <div class="statistics-details d-flex align-items-center justify-content-between">
                     <div>
-                      <p class="statistics-title">Bounce Rate</p>
-                      <h3 class="rate-percentage">32.53%</h3>
-                      <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
+                      <p class="statistics-title">Total hero data</p>
+                      <a href="{{route('herolist')}}">{{$hero_count}}</a>
+                      
                     </div>
                     <div>
                       <p class="statistics-title">Page Views</p>

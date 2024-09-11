@@ -43,12 +43,8 @@
                             <th> Personal Text </th>
                             <th> User Name </th>
                             <th> Short Discription </th>
-                            <th> Button text </th>
-                            <th> Button Url </th>
-                            <th> Banner Image </th>
-                            <th> Create Date </th>
-                            <th> Update Date </th>
-                            <th> Action </th>
+                            
+                             <th> Action </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -56,21 +52,29 @@
 
                           @foreach ($herolist as $item)
                             <tr>
-                              <td>{{$item->id}}</td>
+                              <td>{{++$i}}</td>
                               <td> {{$item->person_text}}</td>
 
                               <td>{{$item->user_name}}</td>
 
                               <td>{{$item->short_dis}}</td>
-                              <td>{{$item->button_text}}</td>
-                              <td>{{$item->button_url}}</td>
-                              <td>{{$item->image}}</td>
-                              <td>{{$item->create_date}}</td>
-                              <td>{{$item->update_date}}</td>
+                          
                               
-                              <td> <a href="#"><i class="fa-solid fa-pencil"></i></a><b class="p-2">||</b><a href="#"><i class="fa-solid fa-trash"></i></a></td>
+                              <td> <a href="{{route('heroedit',$item->id)}}"><i class="fa-solid fa-pencil"></i></a><b class="p-2">||</b>
+                                <a href="{{route('heroshow',$item->id)}}"><i class="fa-solid fa-eye"></i></a><b class="p-2">||</b>
+
+
+                                <form class="d-inline" action="{{ route('herodelete', $item->id) }}" method="POST">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                              </form>
+                              </td>
 
                             </tr>
+
+
+
 
                           @endforeach
                         </tbody>
